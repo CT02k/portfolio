@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import CT02 from "../svgs/ct02";
 import Image from "next/image";
+import { Github } from "lucide-react";
+import Link from "next/link";
 
 const sections = [
   {
@@ -68,6 +70,26 @@ export default function Navbar() {
         <div className="h-full w-px bg-black"></div>
       </div>
       <nav className="w-64 bg-white backdrop-blur-md h-10 md:h-4/5 items-center z-50 border py-10 border-black rounded-md flex justify-center contain-content m-5 md:m-10">
+        <div className="p-4 w-9/12 absolute top-0 lg:flex justify-center gap-3 hidden">
+          <Link
+            href={"https://github.com/ct02k"}
+            className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
+          >
+            <Github className="size-5" />
+          </Link>
+          <Link
+            href={"https://github.com/ct02k"}
+            className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
+          >
+            <Github className="size-5" />
+          </Link>
+          <Link
+            href={"https://github.com/ct02k"}
+            className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
+          >
+            <Github className="size-5" />
+          </Link>
+        </div>
         <ul className="flex flex-wrap md:flex-nowrap md:flex-col justify-start gap-4 w-full h-fit text-white relative px-5">
           <div className="h-full border-r border-y rounded-r border-black absolute left-0">
             <div

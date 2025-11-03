@@ -3,55 +3,40 @@ import TimelineItem from "../ui/TimelineItem";
 
 const estudos = [
   {
-    title: "Mestrado em Ciência da Computação",
-    description: "UniEsquina",
-    year: "2017 - Atual",
-  },
-  {
-    title: "Bacharelado em ChatGPT",
-    description: "UniEsquina",
-    year: "2017 - Atual",
+    title: "Engenharia de Software",
+    description: "FIAP",
+    year: "Nov. 2025 - Atual",
   },
 ];
 
 const empresas = [
-  { title: "Gerente de Projetos", description: "Google", year: "2021 - Atual" },
-  { title: "CTO", description: "General Motors", year: "2019 - 2021" },
+  { title: "CTO", description: "Artix Cloud", year: "Set. 2025 - Atual" },
 ];
 
 export default function Info() {
   return (
     <section
       id="info"
-      className="h-fit flex items-center justify-between gap-10 ml-90"
+      className="flex justify-between gap-10 ml-90 items-stretch h-full"
     >
-      <div className="flex flex-col w-full h-full">
-        <div className="px-10 pt-20 border-l border-dashed">
+      <div className="flex flex-col w-full border-l border-dashed">
+        <div className="px-10 pt-20">
           <GraduationCap size={64} />
         </div>
         {estudos.map((item) => (
-          <TimelineItem
-            title={item.title}
-            description={item.description}
-            year={item.year}
-            key={item.title}
-          />
+          <TimelineItem {...item} key={item.title} />
         ))}
-        <div className="h-full border-l border-dashed pb-20"></div>
+        <div className="flex-1 border-l border-dashed pb-20"></div>
       </div>
-      <div className="flex flex-col w-full h-full">
-        <div className="px-10 pt-20 border-l border-dashed">
+
+      <div className="flex flex-col w-full border-l border-dashed">
+        <div className="px-10 pt-20">
           <BriefcaseBusiness size={64} />
         </div>
         {empresas.map((item) => (
-          <TimelineItem
-            title={item.title}
-            description={item.description}
-            year={item.year}
-            key={item.title}
-          />
+          <TimelineItem {...item} key={item.title} />
         ))}
-        <div className="h-full border-l border-dashed pb-20"></div>
+        <div className="flex-1 border-l border-dashed pb-20"></div>
       </div>
     </section>
   );
