@@ -26,7 +26,7 @@ export default function Info() {
       className="h-fit flex items-center justify-between gap-10 ml-90"
     >
       <div className="flex flex-col w-full h-full">
-        <div className="px-5 pt-5 border-l">
+        <div className="px-5 pt-20 border-l">
           <GraduationCap size={64} />
         </div>
         {estudos.map((item) => (
@@ -37,10 +37,10 @@ export default function Info() {
             key={item.title}
           />
         ))}
-        <div className="h-full border-l"></div>
+        <div className="h-full border-l pb-20"></div>
       </div>
       <div className="flex flex-col w-full h-full">
-        <div className="px-5 pt-5 border-l">
+        <div className="px-5 pt-20 border-l">
           <BriefcaseBusiness size={64} />
         </div>
         {empresas.map((item) => (
@@ -51,7 +51,7 @@ export default function Info() {
             key={item.title}
           />
         ))}
-        <div className="h-full border-l"></div>
+        <div className="h-full border-l pb-20"></div>
       </div>
     </section>
   );
