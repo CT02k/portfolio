@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CT02 from "./svgs/ct02";
 import Link from "next/link";
 import Image from "next/image";
+import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 
 const sections = [
   {
@@ -20,6 +21,32 @@ const sections = [
   {
     id: "contact",
     name: "Contato",
+  },
+];
+
+const estudos = [
+  {
+    title: "Mestrado em ciência da computação",
+    description: "UniEsquina",
+    year: "2017 - Atual",
+  },
+  {
+    title: "Bacharelado em chatgpt",
+    description: "UniEsquina",
+    year: "2017 - Atual",
+  },
+];
+
+const empresas = [
+  {
+    title: "Gerente de Projetos",
+    description: "Google",
+    year: "2021 - Atual",
+  },
+  {
+    title: "CTO",
+    description: "General Motors",
+    year: "2019 - 2021",
   },
 ];
 
@@ -64,11 +91,7 @@ export function Navbar() {
   };
 
   return (
-    <div className="flex h-fit md:h-full w-full md:w-auto fixed items-center justify-center md:justify-start">
-      <Link
-        href="https://cal.com/joaop"
-        className="fixed bottom-5 right-5 size-16 rounded-full transition hover:opacity-90 bg-cover bg-[url('/cal.jpg')]"
-      ></Link>
+    <div className="flex h-fit md:h-full w-full md:w-auto fixed items-center justify-center md:justify-start font-mono">
       <div className="flex w-full h-full justify-center absolute">
         <div className="h-full w-px bg-black"></div>
       </div>
@@ -112,7 +135,10 @@ export function Navbar() {
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <Navbar />
+      <Link
+        href="https://cal.com/joaop"
+        className="fixed bottom-5 right-5 size-16 rounded-full transition hover:opacity-90 bg-cover bg-[url('/cal.jpg')]"
+      ></Link>
       <section
         id="about"
         className="h-screen flex flex-col items-center justify-center border-b"
@@ -144,13 +170,40 @@ export default function Home() {
       </section>
       <section
         id="info"
-        className="h-screen flex items-center justify-center border-b"
+        className="h-fit flex items-center justify-between gap-10 ml-90"
       >
-        <h1 className="text-8xl">c</h1>
+        <div className="flex flex-col w-full h-full">
+          <div className="px-5 pt-5 border-l">
+            <GraduationCap size={64} />
+          </div>
+          {estudos.map((item) => (
+            <div key={item.title} className="border-l relative p-6">
+              <div className="absolute -left-1.5 top-8 w-3 h-3 bg-black rounded-full"></div>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-zinc-600">{item.description}</p>
+              <span className="text-sm text-zinc-500">{item.year}</span>
+            </div>
+          ))}
+          <div className="h-full border-l"></div>
+        </div>
+        <div className="flex flex-col w-full h-full">
+          <div className="px-5 pt-5 border-l">
+            <BriefcaseBusiness size={64} />
+          </div>
+          {empresas.map((item) => (
+            <div key={item.title} className="border-l relative p-6">
+              <div className="absolute -left-1.5 top-8 w-3 h-3 bg-black rounded-full"></div>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-zinc-600">{item.description}</p>
+              <span className="text-sm text-zinc-500">{item.year}</span>
+            </div>
+          ))}
+          <div className="h-full border-l"></div>
+        </div>
       </section>
       <section
         id="contact"
-        className="h-screen flex items-center justify-center border-b"
+        className="h-screen flex items-center justify-center border-y"
       >
         <h1 className="text-8xl">d</h1>
       </section>
