@@ -1,21 +1,31 @@
+import { ArrowBigDown, ExternalLink } from "lucide-react";
+import Link from "next/link";
+
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center border-y px-6"
+      className="h-screen flex flex-col justify-center border-y px-102"
     >
       <h2 className="text-5xl font-semibold mb-6">Contato</h2>
-      <p className="text-zinc-700 text-lg text-center max-w-xl leading-relaxed">
+      <p className="text-zinc-700 text-lg max-w-xl leading-relaxed">
         Quer discutir um projeto, colaboração ou ideia? Entre em contato comigo
         via{" "}
         <a
-          href="mailto:ct02@artixcloud.com"
+          href="mailto:contato@ct02.work"
           className="text-black underline underline-offset-4 hover:opacity-80"
         >
-          ct02@artixcloud.com
+          contato@ct02.work
         </a>{" "}
-        ou agende uma conversa pelo link no canto inferior direito.
+        ou agende uma conversa <ArrowBigDown className="inline" />
       </p>
+
+      <Link
+        href="https://cal.com/joaop"
+        className="flex w-fit bg-linear-to-b from-black to-zinc-800 border border-zinc-800 text-white text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
+      >
+        Agendar
+      </Link>
     </section>
   );
 }
