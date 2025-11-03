@@ -1,3 +1,4 @@
+import CT02 from "@/app/svgs/ct02";
 import { ArrowBigDown } from "lucide-react";
 import Link from "next/link";
 
@@ -7,7 +8,9 @@ export default function Contact() {
       id="contact"
       className="h-screen flex flex-col justify-center border-y px-102"
     >
-      <h2 className="text-5xl font-semibold mb-6">Contato</h2>
+      <h2 className="text-6xl font-semibold text-black flex items-start mb-6">
+        Contato <CT02 className="inline size-6 ml-2" />
+      </h2>
       <p className="text-zinc-700 text-lg max-w-xl leading-relaxed">
         Quer discutir um projeto, colaboração ou ideia? Entre em contato comigo
         via{" "}
