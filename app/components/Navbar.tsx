@@ -67,7 +67,7 @@ export default function Navbar() {
   return (
     <div className="flex h-fit md:h-full w-full md:w-auto fixed items-center justify-center md:justify-start font-mono">
       <div className="flex w-full h-full justify-center absolute">
-        <div className="h-full w-px bg-black"></div>
+        <div className="h-10 md:h-full w-px bg-black"></div>
       </div>
       <nav className="w-64 bg-white backdrop-blur-md h-10 md:h-4/5 items-center z-50 border py-10 border-black rounded-md flex justify-center contain-content m-5 md:m-10">
         <div className="p-4 w-9/12 absolute top-0 lg:flex justify-center gap-3 hidden">

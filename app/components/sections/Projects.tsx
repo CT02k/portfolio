@@ -2,16 +2,14 @@ import ProjectCard from "../ui/ProjectCard";
 
 const projects = [
   {
-    title: "Painel ArtixCloud",
-    description:
-      "Painel moderno e otimizado para gerenciamento de servidores de Minecraft.",
-    image: "/placeholder.png",
-    tags: ["Design", "Programação"],
+    title: "Interface NG.Cash",
+    description: "Interface aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    image: "/placeholder-2.png",
+    tags: ["Design"],
   },
   {
-    title: "API Billing System",
-    description:
-      "Sistema de cobrança e automação financeira para provedores de hospedagem.",
+    title: "Portfolio",
+    description: "Yy",
     image: "/placeholder.png",
     tags: ["Design", "Programação"],
   },
