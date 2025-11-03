@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import CT02 from "./svgs/ct02";
 import Link from "next/link";
+import Image from "next/image";
 
 const sections = [
   {
@@ -64,8 +65,12 @@ export function Navbar() {
 
   return (
     <div className="flex h-fit md:h-full w-full md:w-auto fixed items-center justify-center md:justify-start">
+      <Link
+        href="https://cal.com/joaop"
+        className="fixed bottom-5 right-5 size-16 rounded-full transition hover:opacity-90 bg-cover bg-[url('/cal.jpg')]"
+      ></Link>
       <div className="flex w-full h-full justify-center absolute">
-        <div className="h-full w-0.5 bg-black"></div>
+        <div className="h-full w-px bg-black"></div>
       </div>
       <nav className="w-64 bg-white backdrop-blur-md h-10 md:h-4/5 items-center z-50 border py-10 border-black rounded-md flex justify-center contain-content m-5 md:m-10">
         <ul className="flex flex-wrap md:flex-nowrap md:flex-col justify-start gap-4 w-full h-fit text-white relative px-5">
@@ -92,6 +97,13 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+        <Image
+          src="/cat.png"
+          alt="cat"
+          className="absolute -bottom-4 grayscale hidden lg:block"
+          height={160}
+          width={160}
+        />
       </nav>
     </div>
   );
@@ -118,7 +130,7 @@ export default function Home() {
           </p>
           <Link
             href="/cv.pdf"
-            className="flex w-fit border border-black text-black text-lg px-4 py-2 rounded-full mt-5 transition hover:bg-black hover:text-white"
+            className="flex w-fit bg-linear-to-b from-black to-zinc-800 border border-zinc-800 text-white text-lg px-4 py-2 rounded-full mt-5 transition hover:opacity-90 hover:text-white"
           >
             Baixar currículo
           </Link>
