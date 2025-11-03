@@ -1,65 +1,147 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useState } from "react";
+import CT02 from "./svgs/ct02";
+import Link from "next/link";
+
+const sections = [
+  {
+    id: "about",
+    name: "Sobre mim",
+  },
+  {
+    id: "projects",
+    name: "Projetos",
+  },
+  {
+    id: "info",
+    name: "Informações",
+  },
+  {
+    id: "contact",
+    name: "Contato",
+  },
+];
+
+export function Navbar() {
+  const [active, setActive] = useState<string>("about");
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      setHeight(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="flex h-fit md:h-full w-full md:w-auto fixed items-center justify-center md:justify-start">
+      <div className="flex w-full h-full justify-center absolute">
+        <div className="h-full w-0.5 bg-black"></div>
+      </div>
+      <nav className="w-64 bg-white backdrop-blur-md h-10 md:h-4/5 items-center z-50 border py-10 border-black rounded-md flex justify-center contain-content m-5 md:m-10">
+        <ul className="flex flex-wrap md:flex-nowrap md:flex-col justify-start gap-4 w-full h-fit text-white relative px-5">
+          <div className="h-full border-r border-y rounded-r border-black absolute left-0">
+            <div
+              className="transition-all duration-75 bg-black w-1"
+              style={{ height: height + "%" }}
+            ></div>
+          </div>
+          {sections.map(({ name, id }) => (
+            <li
+              key={id}
+              onClick={() => handleScroll(id)}
+              className={`cursor-pointer text-sm md:text-xl transition relative hover:opacity-75
+              ${active === id ? "text-black font-semibold" : "text-zinc-600"}`}
+            >
+              <CT02
+                className={`size-3 md:size-7 inline mr-2 ${
+                  active === id && "fill-black animate-spin"
+                }`}
+                style={{ animationDuration: "4s" }}
+              />
+              {name}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="flex flex-col">
+      <Navbar />
+      <section
+        id="about"
+        className="h-screen flex flex-col items-center justify-center border-b"
+      >
+        <div className="flex flex-col w-1/2">
+          <h1 className="text-6xl font-semibold text-black flex items-start">
+            CT02 <CT02 className="inline size-6" />
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl">
+            Sou um desenvolvedor fullstack apaixonado em criar aplicações
+            rápidas, estáveis e bem construídas, do visual à arquitetura.
+            Trabalho com tecnologias como React, Next.js, Node.js e TypeScript,
+            sempre buscando o equilíbrio entre desempenho, design e
+            funcionalidade real.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/cv.pdf"
+            className="flex w-fit border border-black text-black text-lg px-4 py-2 rounded-full mt-5 transition hover:bg-black hover:text-white"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Baixar currículo
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+      <section
+        id="projects"
+        className="h-screen flex items-center justify-center border-b"
+      >
+        <h1 className="text-8xl">b</h1>
+      </section>
+      <section
+        id="info"
+        className="h-screen flex items-center justify-center border-b"
+      >
+        <h1 className="text-8xl">c</h1>
+      </section>
+      <section
+        id="contact"
+        className="h-screen flex items-center justify-center border-b"
+      >
+        <h1 className="text-8xl">d</h1>
+      </section>
+    </main>
   );
 }
