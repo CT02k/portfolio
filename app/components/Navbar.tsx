@@ -1,40 +1,25 @@
 "use client";
 import { useEffect, useState } from "react";
 import CT02 from "../svgs/ct02";
-import Image from "next/image";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 const sections = [
-  {
-    id: "about",
-    name: "Sobre mim",
-  },
-  {
-    id: "projects",
-    name: "Projetos",
-  },
-  {
-    id: "info",
-    name: "Informações",
-  },
-  {
-    id: "contact",
-    name: "Contato",
-  },
+  { id: "about", name: "Sobre mim" },
+  { id: "projects", name: "Projetos" },
+  { id: "info", name: "Informações" },
+  { id: "contact", name: "Contato" },
 ];
 
 export default function Navbar() {
   const [active, setActive] = useState<string>("about");
-  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
+          if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
       { threshold: 0.5 }
@@ -53,7 +38,7 @@ export default function Navbar() {
       const scrollTop = window.scrollY;
       const docHeight = document.body.scrollHeight - window.innerHeight;
       const scrolled = (scrollTop / docHeight) * 100;
-      setHeight(scrolled);
+      setWidth(scrolled);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -65,47 +50,49 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex h-fit md:h-full w-full md:w-auto fixed items-center justify-center md:justify-start font-mono">
-      <div className="flex w-full h-full justify-center absolute">
-        <div className="h-10 md:h-full w-px bg-black"></div>
+    <div className="fixed top-0 left-0 w-full z-50 font-mono">
+      <div className="relative w-full h-1 border-b bg-white/50 backdrop-blur">
+        <div
+          className="absolute top-0 left-0 h-1 bg-black transition-all duration-75"
+          style={{ width: width + "%" }}
+        ></div>
       </div>
-      <nav className="w-64 bg-white backdrop-blur-md h-10 md:h-4/5 items-center z-50 border py-10 border-black rounded-md flex justify-center contain-content m-5 md:m-10">
-        <div className="p-4 w-9/12 absolute top-0 lg:flex justify-center gap-3 hidden">
+
+      <nav className="w-full bg-white/50 backdrop-blur border-b border-black flex items-center justify-between px-6 py-3">
+        <div className="flex gap-3">
           <Link
-            href={"https://github.com/ct02k"}
-            className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
+            href="https://github.com/ct02k"
+            className="transition hover:opacity-90 bg-black p-2 rounded-lg text-white"
           >
             <Github className="size-5" />
           </Link>
           <Link
-            href={"https://www.linkedin.com/in/ct02/"}
-            className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
+            href="https://www.linkedin.com/in/ct02/"
+            className="transition hover:opacity-90 bg-black p-2 rounded-lg text-white"
           >
             <Linkedin className="size-5" />
           </Link>
           <Link
-            href={"mailto:contato@ct02.work"}
-            className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
+            href="mailto:contato@ct02.work"
+            className="transition hover:opacity-90 bg-black p-2 rounded-lg text-white"
           >
             <Mail className="size-5" />
           </Link>
         </div>
-        <ul className="flex flex-wrap md:flex-nowrap md:flex-col justify-start gap-4 w-full h-fit text-white relative px-5">
-          <div className="h-full border-r border-y rounded-r border-black absolute left-0">
-            <div
-              className="transition-all duration-75 bg-black w-1"
-              style={{ height: height + "%" }}
-            ></div>
-          </div>
+
+        <ul className="flex gap-6 text-sm md:text-base">
           {sections.map(({ name, id }) => (
             <li
               key={id}
               onClick={() => handleScroll(id)}
-              className={`cursor-pointer text-sm md:text-xl transition relative hover:opacity-75
-              ${active === id ? "text-black font-semibold" : "text-zinc-600"}`}
+              className={`cursor-pointer transition relative flex items-center gap-2 ${
+                active === id
+                  ? "text-black font-semibold"
+                  : "text-zinc-600 hover:opacity-75"
+              }`}
             >
               <CT02
-                className={`size-3 md:size-7 inline mr-2 transition ${
+                className={`size-3 md:size-5 transition ${
                   active === id ? "fill-black animate-spin" : "fill-white"
                 }`}
                 style={{ animationDuration: "4s" }}
@@ -115,17 +102,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <span className="font-sans text-green-700 text-xl absolute bottom-3 right-3">
+        <span className="font-sans text-green-700 text-lg">
           <span className="text-red-600">@</span>
           {"}"}-,-{"'"}---
         </span>
-        {/* <Image
-          src="/cat.png"
-          alt="cat"
-          className="absolute -bottom-4 grayscale hidden lg:block"
-          height={160}
-          width={160}
-        /> */}
       </nav>
     </div>
   );
