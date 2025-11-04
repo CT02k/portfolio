@@ -10,7 +10,7 @@ const estudos = [
 ];
 
 const empresas = [
-  { title: "CTO", description: "Artix Cloud", year: "Set. 2025 - Atual" },
+  { title: "Tech Lead", description: "Artix Cloud", year: "Set. 2025 - Atual" },
 ];
 
 export default function Info() {

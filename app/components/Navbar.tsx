@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import CT02 from "../svgs/ct02";
 import Image from "next/image";
-import { Github } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 const sections = [
@@ -78,16 +78,16 @@ export default function Navbar() {
             <Github className="size-5" />
           </Link>
           <Link
-            href={"https://github.com/ct02k"}
+            href={"https://www.linkedin.com/in/ct02/"}
             className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
           >
-            <Github className="size-5" />
+            <Linkedin className="size-5" />
           </Link>
           <Link
-            href={"https://github.com/ct02k"}
+            href={"mailto:contato@ct02.work"}
             className="transition hover:opacity-90 bg-black p-2.5 rounded-lg text-white"
           >
-            <Github className="size-5" />
+            <Mail className="size-5" />
           </Link>
         </div>
         <ul className="flex flex-wrap md:flex-nowrap md:flex-col justify-start gap-4 w-full h-fit text-white relative px-5">
