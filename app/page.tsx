@@ -6,12 +6,11 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col relative">
       <Link
         href="https://cal.com/joaop"
-        className="fixed bottom-5 right-5 border size-16 rounded-full transition hover:opacity-90 bg-cover bg-[url('/cal.jpg')]"
+        className="fixed bottom-5 right-5 border size-16 z-40 rounded-full transition hover:opacity-90 bg-cover bg-[url('/cal.jpg')]"
       ></Link>
-
       <About />
       <Projects />
       <Info />

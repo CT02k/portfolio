@@ -17,16 +17,25 @@ export default function ProjectCard({
   return (
     <Link
       href="#"
-      className="border border-black rounded-lg h-fit cursor-pointer transition-all overflow-hidden bg-white w-lg"
+      className="group border border-black rounded-lg cursor-pointer transition-all overflow-hidden bg-white w-full max-w-md"
     >
-      <div className="relative h-[270px]">
-        <Image src={image} alt={title} fill className="object-cover" />
-        <div className="p-4 absolute bottom-0 bg-linear-to-t from-black/10 opacity-0 hover:opacity-100 transition duration-400 to-transparent backdrop-blur-[2px] z-10 w-full h-full flex flex-col justify-end">
+      <div className="relative w-full h-auto">
+        <Image
+          src={image}
+          alt={title}
+          width={1200}
+          height={800}
+          className="w-full h-auto object-contain"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+
+        <div className="p-4 absolute bottom-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 backdrop-blur-[2px] z-10 w-full h-full flex flex-col justify-end">
           <div className="bg-white border p-3 rounded-lg">
             <h3 className="text-xl font-semibold">{title}</h3>
             <p className="text-zinc-600 text-sm mt-1">{description}</p>
           </div>
         </div>
+
         <div className="flex flex-wrap gap-2 mt-3 absolute bottom-2 right-2">
           {tags.map((tag) => (
             <span

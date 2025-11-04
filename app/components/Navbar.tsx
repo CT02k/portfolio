@@ -50,16 +50,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 font-mono">
-      <div className="relative w-full h-1 border-b bg-white/50 backdrop-blur">
-        <div
-          className="absolute top-0 left-0 h-1 bg-black transition-all duration-75"
-          style={{ width: width + "%" }}
-        ></div>
-      </div>
-
+    <div className="fixed top-0 left-0 w-full z-50 font-mono flex flex-col items-center">
       <nav className="w-full bg-white/50 backdrop-blur border-b border-black flex items-center justify-between px-6 py-3">
-        <div className="flex gap-3">
+        <div className="md:flex gap-3 hidden">
           <Link
             href="https://github.com/ct02k"
             className="transition hover:opacity-90 bg-black p-2 rounded-lg text-white"
@@ -80,7 +73,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <ul className="flex gap-6 text-sm md:text-base">
+        <ul className="flex flex-wrap md:flex-nowrap gap-6 text-sm md:text-base">
           {sections.map(({ name, id }) => (
             <li
               key={id}
@@ -107,6 +100,12 @@ export default function Navbar() {
           {"}"}-,-{"'"}---
         </span>
       </nav>
+      <div className="relative w-1/2 h-1 border-b border-x rounded-b-full bg-white/50 backdrop-blur">
+        <div
+          className="absolute top-0 left-0 h-1 bg-black transition-all duration-75"
+          style={{ width: width + "%" }}
+        ></div>
+      </div>
     </div>
   );
 }

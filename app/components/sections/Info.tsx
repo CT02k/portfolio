@@ -36,7 +36,7 @@ export default function Info() {
   return (
     <section
       id="info"
-      className="flex justify-between self-center gap-32 items-stretch h-full"
+      className="flex flex-col md:flex-row justify-between self-center md:gap-64 items-stretch h-full"
     >
       <div className="flex flex-col w-full border-l border-dashed">
         <div className="px-10 pt-20">
