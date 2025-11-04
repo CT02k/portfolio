@@ -1,3 +1,4 @@
+import CT02 from "@/app/svgs/ct02";
 import ProjectCard from "../ui/ProjectCard";
 
 const projects = [
@@ -9,7 +10,7 @@ const projects = [
   },
   {
     title: "Portfolio",
-    description: "Yy",
+    description: "Meu portfolio, o site que você está agora.",
     image: "/placeholder.png",
     tags: ["Design", "Programação"],
   },
@@ -19,10 +20,14 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center border-b px-5 py-20 pl-90"
+      className="flex flex-col items-center justify-center border-b px-5 py-20 pl-120 min-h-[75dvh]"
     >
-      <h2 className="text-5xl font-semibold mb-10">Projetos</h2>
-      <div className="flex flex-wrap justify-center gap-8 w-full max-w-6xl">
+      <div className="w-full">
+        <h2 className="text-6xl font-semibold mb-10 flex items-start">
+          Projetos <CT02 className="inline size-6 ml-2" />
+        </h2>
+      </div>
+      <div className="flex flex-wrap justify-start gap-8 w-full">
         {projects.map((p) => (
           <ProjectCard key={p.title} {...p} />
         ))}

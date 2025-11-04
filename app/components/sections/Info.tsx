@@ -7,10 +7,29 @@ const estudos = [
     description: "FIAP",
     year: "Nov. 2025 - Atual",
   },
+  {
+    title: "Desenvolvimento Fullstack",
+    description: "Estudo Independente",
+    year: "2016 - Atual",
+  },
 ];
 
 const empresas = [
-  { title: "Tech Lead", description: "Artix Cloud", year: "Set. 2025 - Atual" },
+  {
+    title: "Fundador",
+    description: "Arsenic Studio",
+    year: "Out. 2025 - Atual",
+  },
+  {
+    title: "Tech Lead",
+    description: "Artix Cloud",
+    year: "Dez. 2024 - Set. 2025",
+  },
+  {
+    title: "Desenvolvedor Fullstack",
+    description: "Whirl",
+    year: "Set. 2023 - Dez. 2024",
+  },
 ];
 
 export default function Info() {

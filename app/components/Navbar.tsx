@@ -105,8 +105,8 @@ export default function Navbar() {
               ${active === id ? "text-black font-semibold" : "text-zinc-600"}`}
             >
               <CT02
-                className={`size-3 md:size-7 inline mr-2 ${
-                  active === id && "fill-black animate-spin"
+                className={`size-3 md:size-7 inline mr-2 transition ${
+                  active === id ? "fill-black animate-spin" : "fill-white"
                 }`}
                 style={{ animationDuration: "4s" }}
               />
@@ -114,13 +114,18 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <Image
+
+        <span className="font-sans text-green-700 text-xl absolute bottom-3 right-3">
+          <span className="text-red-600">@</span>
+          {"}"}-,-{"'"}---
+        </span>
+        {/* <Image
           src="/cat.png"
           alt="cat"
           className="absolute -bottom-4 grayscale hidden lg:block"
           height={160}
           width={160}
-        />
+        /> */}
       </nav>
     </div>
   );

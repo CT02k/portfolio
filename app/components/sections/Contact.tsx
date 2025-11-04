@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="h-screen flex flex-col justify-center border-y px-102"
+      className="flex flex-col justify-center border-y px-120 h-dvh"
     >
       <h2 className="text-6xl font-semibold text-black flex items-start mb-6">
         Contato <CT02 className="inline size-6 ml-2" />
