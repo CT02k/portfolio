@@ -1,16 +1,15 @@
 import { BriefcaseBusiness, GraduationCap } from "lucide-react";
-import TimelineItem from "../ui/TimelineItem";
+import { TimelineStudyItem, TimelineWorkItem } from "../ui/TimelineItem";
 
 const estudos = [
   {
     title: "Engenharia de Software",
     description: "FIAP",
-    year: "Nov. 2025 - Atual",
-  },
-  {
-    title: "Desenvolvimento Fullstack",
-    description: "Estudo Independente",
-    year: "2016 - Atual",
+    credentials: {
+      url: "https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=e900db0dc20465bd3e2b85001421fc45&action=view",
+      id: "e900db0dc20465bd3e2b85001421fc45",
+    },
+    year: "Nov. 2025",
   },
 ];
 
@@ -43,7 +42,7 @@ export default function Info() {
           <GraduationCap size={64} />
         </div>
         {estudos.map((item) => (
-          <TimelineItem {...item} key={item.title} />
+          <TimelineStudyItem {...item} key={item.title} />
         ))}
         <div className="flex-1 border-l border-dashed pb-20"></div>
       </div>
@@ -53,7 +52,7 @@ export default function Info() {
           <BriefcaseBusiness size={64} />
         </div>
         {empresas.map((item) => (
-          <TimelineItem {...item} key={item.title} />
+          <TimelineWorkItem {...item} key={item.title} />
         ))}
         <div className="flex-1 border-l border-dashed pb-20"></div>
       </div>
