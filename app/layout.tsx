@@ -20,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="selection:bg-black/25">
-      <Navbar />
       <body className={`${bricolageGrotesque.className} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>
