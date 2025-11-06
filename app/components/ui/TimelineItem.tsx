@@ -55,7 +55,7 @@ export function TimelineStudyItem({
         <div className="flex flex-col mt-2">
           <a
             href={credentials.url}
-            className="px-3 py-1 text-sm bg-black text-white flex justify-center items-center gap-1 rounded-full w-fit transition hover:opacity-90"
+            className="px-3 py-1 text-sm bg-linear-to-b from-black to-zinc-800 border border-black text-white flex justify-center items-center gap-1 rounded-full w-fit transition hover:opacity-90"
           >
             Ver credencial <ExternalLink size={14} />
           </a>
