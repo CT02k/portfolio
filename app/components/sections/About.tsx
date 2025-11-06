@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="h-screen flex flex-col items-center justify-center border-b px-6"
+      className="h-screen flex flex-col items-center justify-center border-b px-6 relative bg-[url('/grid.svg')] bg-cover"
     >
       <div className="flex flex-col w-full md:w-1/2">
         <h1 className="text-5xl md:text-6xl font-semibold text-black flex items-start">
