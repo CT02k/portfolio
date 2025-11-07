@@ -2,28 +2,24 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "hono": "^4.10.4",
-    "lucide-react": "^0.552.0",
-    "next": "16.0.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:api\"",
+    "dev:web": "npm run dev --workspace @portfolio/web",
+    "dev:api": "npm run dev --workspace @portfolio/api",
+    "build": "npm run build:web && npm run build:api",
+    "build:web": "npm run build --workspace @portfolio/web",
+    "build:api": "npm run build --workspace @portfolio/api",
+    "start": "npm run start:web",
+    "start:web": "npm run start --workspace @portfolio/web",
+    "start:api": "npm run start --workspace @portfolio/api",
+    "lint": "npm run lint:web && npm run lint:api",
+    "lint:web": "npm run lint --workspace @portfolio/web",
+    "lint:api": "npm run lint --workspace @portfolio/api"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "concurrently": "^9.2.1",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "concurrently": "^9.2.1"
   }
 }
