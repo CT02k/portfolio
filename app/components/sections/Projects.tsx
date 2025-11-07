@@ -30,7 +30,7 @@ export default function Projects() {
       className="flex flex-col items-center justify-center border-b py-48"
     >
       <div className="flex flex-col items-center">
-        <h2 className="text-6xl font-semibold mb-10 flex items-start w-full px-10">
+        <h2 className="text-6xl font-semibold mb-10 flex w-full px-10">
           Projetos <CT02 className="inline size-6 ml-2" />
         </h2>
         <div className="justify-start gap-8 grid md:grid-cols-2 lg:grid-cols-3 px-10">
