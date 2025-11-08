@@ -45,10 +45,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScroll = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className="fixed top-0 left-0 w-full z-50 font-mono flex flex-col items-center">
       <nav className="w-full bg-white/50 backdrop-blur border-b border-black flex items-center justify-between px-6 py-3">
@@ -75,9 +71,9 @@ export default function Navbar() {
 
         <ul className="flex flex-wrap md:flex-nowrap gap-6 text-sm md:text-base">
           {sections.map(({ name, id }) => (
-            <li
+            <Link
               key={id}
-              onClick={() => handleScroll(id)}
+              href={`/#${id}`}
               className={`cursor-pointer transition relative flex items-center gap-2 ${
                 active === id
                   ? "text-black font-semibold"
@@ -91,7 +87,7 @@ export default function Navbar() {
                 style={{ animationDuration: "4s" }}
               />
               {name}
-            </li>
+            </Link>
           ))}
         </ul>
 
