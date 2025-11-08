@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Script from "next/script";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
@@ -19,10 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="selection:bg-black/25">
+    <html lang="pt-BR" className="selection:bg-black/25">
       <body className={`${bricolageGrotesque.className} antialiased`}>
         <Navbar />
         {children}
+        <Script
+          src="https://tracking.arsenic.cv/api/script.js"
+          data-site-id="1d1f08109333"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
