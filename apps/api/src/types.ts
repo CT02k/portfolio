@@ -20,6 +20,7 @@ export const ProjectSchema = z.object({
   title: z.string(),
   description: z.string(),
   image: z.string(),
+  url: z.url().optional(),
   tags: z.array(z.string()),
 });
 

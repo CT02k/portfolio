@@ -5,6 +5,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  url?: string;
   tags: string[];
 }
 
@@ -12,11 +13,14 @@ export default function ProjectCard({
   title,
   description,
   image,
+  url,
   tags,
 }: ProjectCardProps) {
   return (
     <Link
-      href="#"
+      href={url ? url + "?ref=ct02" : ""}
+      target="_blank"
+      rel="noopener"
       className="group border border-black rounded-lg cursor-pointer transition-all overflow-hidden bg-white w-full max-w-md"
     >
       <div className="relative w-full h-auto">

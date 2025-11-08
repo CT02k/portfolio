@@ -27,19 +27,21 @@ const projects: Project[] = [
     title: "Portfolio",
     description: "Meu portfolio, o site que voce esta agora.",
     image: "/projetos/ct02.png",
-    tags: ["Design", "Programacao"],
+    url: "https://ct02.work",
+    tags: ["Design", "Programação"],
   },
   {
     title: "Flow Finance",
     description: "Aplicacao de gestao financeira pessoal inteligente.",
     image: "/projetos/flow-finance.png",
-    tags: ["Design", "Programacao"],
+    tags: ["Design", "Programação"],
   },
   {
     title: "Goanime",
     description:
       "Design da logo, icone e tipografia da Goanime, um player de anime para terminal feito em Golang.",
     image: "/projetos/go-anime.png",
+    url: "https://goanime.fun",
     tags: ["Design"],
   },
 ];
