@@ -1,23 +1,23 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "apps/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:web\" \"npm run dev:api\"",
-    "dev:web": "npm run dev --workspace @portfolio/web",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
     "dev:api": "npm run dev --workspace @portfolio/api",
-    "build": "npm run build:web && npm run build:api",
-    "build:web": "npm run build --workspace @portfolio/web",
+    "dev:web": "npm run dev --workspace @portfolio/web",
+    "build": "npm run build:api && npm run build:web",
     "build:api": "npm run build --workspace @portfolio/api",
-    "start": "npm run start:web",
-    "start:web": "npm run start --workspace @portfolio/web",
+    "build:web": "npm run build --workspace @portfolio/web",
+    "start": "npm run start:api & npm run start:web",
     "start:api": "npm run start --workspace @portfolio/api",
-    "lint": "npm run lint:web && npm run lint:api",
-    "lint:web": "npm run lint --workspace @portfolio/web",
-    "lint:api": "npm run lint --workspace @portfolio/api"
+    "start:web": "npm run start --workspace @portfolio/web",
+    "lint": "npm run lint:api && npm run lint:web",
+    "lint:api": "npm run lint --workspace @portfolio/api",
+    "lint:web": "npm run lint --workspace @portfolio/web"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
