@@ -3,12 +3,10 @@ import { z } from "zod";
 export const StudySchema = z.object({
   title: z.string(),
   description: z.string(),
-  credentials: z
-    .object({
-      url: z.string().url(),
-      id: z.string(),
-    })
-    .optional(),
+  credentials: z.object({
+    url: z.url(),
+    id: z.string(),
+  }),
   year: z.string(),
 });
 
