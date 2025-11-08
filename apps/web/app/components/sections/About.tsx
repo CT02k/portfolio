@@ -7,6 +7,7 @@ export default function About() {
       id="about"
       className="h-screen flex flex-col items-center justify-center border-b px-6 relative bg-[url('/grid.svg')] bg-cover"
     >
+      <div className="absolute w-full h-full  bg-linear-to-t from-black/10 to-white -z-10"></div>
       <div className="flex flex-col w-full md:w-1/2">
         <h1 className="text-5xl md:text-6xl font-semibold text-black flex items-start">
           CT02 <CT02 className="inline size-6 ml-2" />
@@ -21,7 +22,7 @@ export default function About() {
         </p>
         <Link
           href="#contact"
-          className="flex w-fit bg-linear-to-b from-black to-zinc-800 border border-zinc-800 text-white md:text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
+          className="flex w-fit bg-linear-to-b from-black to-zinc-900 border border-zinc-800 text-white md:text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
         >
           Entrar em contato
         </Link>

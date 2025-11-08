@@ -25,7 +25,7 @@ export default function Contact() {
 
       <Link
         href="https://cal.com/joaop"
-        className="flex w-fit bg-linear-to-b from-black to-zinc-800 border border-zinc-800 text-white text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
+        className="flex w-fit bg-linear-to-b from-black to-zinc-900 border border-zinc-800 text-white text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
       >
         Agendar
       </Link>
