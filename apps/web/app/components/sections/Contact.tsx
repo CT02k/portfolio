@@ -11,7 +11,7 @@ export default function Contact() {
       <h2 className="text-6xl font-semibold text-black flex items-start mb-6">
         Contato <CT02 className="inline size-6 ml-2" />
       </h2>
-      <p className="text-zinc-700 text-lg max-w-xl leading-relaxed">
+      <p className="text-zinc-700 text-lg max-w-xl leading-relaxed text-center">
         Quer discutir um projeto, colaboração ou ideia? Entre em contato comigo
         via{" "}
         <a
