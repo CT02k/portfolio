@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@portfolio/api": ["../api/src/index"]
     }
   },
   "include": [
