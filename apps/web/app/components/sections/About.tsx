@@ -19,13 +19,18 @@ export default function About() {
           <strong>Node.js</strong> e <strong>TypeScript</strong>, sempre
           buscando o equilíbrio entre desempenho, design e funcionalidade real.
         </p>
-
         <Link
+          href="#contact"
+          className="flex w-fit bg-linear-to-b from-black to-zinc-800 border border-zinc-800 text-white md:text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
+        >
+          Entrar em contato
+        </Link>
+        {/* <Link
           href="/cv.pdf"
           className="flex w-fit bg-linear-to-b from-black to-zinc-800 border border-zinc-800 text-white md:text-lg px-5 py-2 rounded-full mt-6 transition hover:opacity-90 hover:text-white"
         >
           Baixar currículo
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

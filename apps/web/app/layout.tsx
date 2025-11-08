@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="selection:bg-black/25">
+    <html lang="pt-BR" className="selection:bg-black/25 scroll-smooth">
       <body className={`${bricolageGrotesque.className} antialiased`}>
         <Navbar />
         {children}
