@@ -7,7 +7,7 @@ export default function About() {
       id="about"
       className="h-screen flex flex-col items-center justify-center border-b px-6 relative bg-[url('/grid.svg')] bg-cover"
     >
-      <div className="absolute w-full h-full  bg-linear-to-t from-black/10 to-white -z-10"></div>
+      <div className="absolute w-full h-full   -z-10"></div>
       <div className="flex flex-col w-full md:w-1/2">
         <h1 className="text-5xl md:text-6xl font-semibold text-black flex items-start">
           CT02 <CT02 className="inline size-6 ml-2" />
