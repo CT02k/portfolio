@@ -32,5 +32,8 @@ export const ProjectsResponseSchema = z.object({
   projects: z.array(ProjectSchema),
 });
 
+export type Study = z.infer<typeof StudySchema>;
+export type Work = z.infer<typeof WorkSchema>;
+export type Project = z.infer<typeof ProjectSchema>;
 export type InfoResponse = z.infer<typeof InfoResponseSchema>;
 export type ProjectsResponse = z.infer<typeof ProjectsResponseSchema>;
