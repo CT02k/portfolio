@@ -4,6 +4,8 @@ import Info from "@/app/components/sections/Info";
 import Contact from "@/app/components/sections/Contact";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <main className="flex flex-col relative">
