@@ -1,0 +1,7 @@
+.git
+.gitignore
+node_modules
+apps/web/.next
+apps/api/dist
+npm-debug.log*
+.env
