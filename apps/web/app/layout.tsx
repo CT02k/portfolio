@@ -10,7 +10,6 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  themeColor: "#FFFFFF",
   title: "Portfolio - CT02",
   description:
     "Sou um desenvolvedor fullstack apaixonado em criar aplicações rápidas, estáveis e bem construídas — do visual à arquitetura. Trabalho com tecnologias como React, Next.js, Node.js e TypeScript, sempre buscando o equilíbrio entre desempenho, design e funcionalidade real.",
@@ -29,6 +28,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({
@@ -50,3 +50,4 @@ export default function RootLayout({
     </html>
   );
 }
+
