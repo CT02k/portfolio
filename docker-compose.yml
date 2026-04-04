@@ -4,21 +4,21 @@ services:
       context: .
       dockerfile: Dockerfile.api
     environment:
-      PORT: 4000
-    ports:
-      - "4000:4000"
+      PORT: ${PORT}
+    expose:
+      - ${PORT}
 
   web:
     build:
       context: .
       dockerfile: Dockerfile.web
       args:
-        NEXT_PUBLIC_API_URL: http://api:4000
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
     depends_on:
       - api
     environment:
-      NEXT_PUBLIC_API_URL: http://api:4000
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
       PORT: 3000
       HOSTNAME: 0.0.0.0
-    ports:
-      - "3000:3000"
+    expose:
+      - 3000
