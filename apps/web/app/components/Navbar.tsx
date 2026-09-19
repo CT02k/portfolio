@@ -62,7 +62,7 @@ export default function Navbar() {
             <Linkedin className="size-5" />
           </Link>
           <Link
-            href="mailto:contato@ct02.work"
+            href="mailto:joaop@arsenic.cv"
             className="transition hover:opacity-90 bg-black p-2 rounded-lg text-white"
           >
             <Mail className="size-5" />
