@@ -15,10 +15,10 @@ export default function Contact() {
         Quer discutir um projeto, colaboração ou ideia? Entre em contato comigo
         via{" "}
         <a
-          href="mailto:contato@ct02.work"
+          href="mailto:joaop@arsenic.cv"
           className="text-black underline underline-offset-4 hover:opacity-80"
         >
-          contato@ct02.work
+          joaop@arsenic.cv
         </a>{" "}
         ou agende uma conversa <ArrowBigDown className="inline" />
       </p>
